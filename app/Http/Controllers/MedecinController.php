@@ -77,10 +77,10 @@ class MedecinController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $medecins = Medecin::findOrFail($id);
-        return view('medecin.edit',compact('medecins'));
-        
+        return view('medecin.edit',compact('medecins'));}
+        return redirect()->route('medecin.index') ; 
     }
 
     /**
@@ -114,21 +114,23 @@ class MedecinController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $medecins = Medecin::find($id);
         $medecins->delete() ;
 
         return redirect()->route('medecin.index')
-        ->with('success','medecin deleted successfully '); 
+        ->with('success','medecin deleted successfully '); }
+        return redirect()->route('medecin.index') ;
     }
 
     public function search()
     {
        $search_text=$_GET['query'];
         $medecins =  Medecin::Where('special' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('email' , 'LIKE' , '%' .  $search_text .'%')->get();
+                       ->orWhere('email' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
 
-                     //  dd($user);
+                
 
         return view('medecin.search',compact('medecins'));
 

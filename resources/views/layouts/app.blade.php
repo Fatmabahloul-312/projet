@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Staff medical</title>
+    <title>StaffMedical</title>
     <link href="/templates/ja_biz/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 
     <!-- Fonts -->
@@ -19,7 +19,9 @@
     <style>
         body {
             font-family: 'Lato';
-            background-image:url(site.jpg);
+            background-image:url(staff1.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
         }
 
         .fa-btn {

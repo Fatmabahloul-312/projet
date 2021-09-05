@@ -16,7 +16,24 @@
 					</div>
 				</div>
 			</div>
+      <div class="row">
+        <div class="col">
 
+       <div class="container" style=" padding-bottom: 13px">
+        <form class="form-inline" action="{{url('infirmier/search')}}" method="GET" >
+          {{ csrf_field() }}
+
+            <div class="form-group mx-sm-3 mb-2">
+             
+              <input type="text" name="que" class="form-control" id="inputPassword2" placeholder="rechercher">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">search</button>
+          </form>
+       </div>
+
+        </div>
+      </div>
+     
 
 
 

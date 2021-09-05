@@ -20,14 +20,14 @@
         <div class="col">
 
        <div class="container" style=" padding-bottom: 13px">
-        <form class="form-inline" action="{{url('/search')}}" method="GET" >
+        <form class="form-inline" action="{{url('medecin/search')}}" method="GET" >
           {{ csrf_field() }}
 
             <div class="form-group mx-sm-3 mb-2">
              
               <input type="text" name="query" class="form-control" id="inputPassword2" placeholder="rechercher">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">search</button>
+            <button type="submit" class="btn btn-primary mb-2">chercher</button>
           </form>
        </div>
 
@@ -88,7 +88,7 @@
   @endforeach
 
 
-</tbody>
+</tbody>  
   
 </table>
 </div>

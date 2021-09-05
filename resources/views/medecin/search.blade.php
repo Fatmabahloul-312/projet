@@ -1,6 +1,10 @@
 @extends('medecin.layout')
 @section('content')
+
 @if (isset($medecins))
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
       <div class="row" style="padding-top: 2%; padding-bottom:3%">
 
         <div class="container">
@@ -37,5 +41,9 @@
 
                     </tbody>
                   </table>
+</div>
+</div>
+</div>
                   @endif
+
  @endsection

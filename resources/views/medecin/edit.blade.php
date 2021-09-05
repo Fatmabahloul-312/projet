@@ -37,38 +37,38 @@
 
   <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">Spécialité</label>
-  <select class="form-select form-select-lg mb-3" name="special" aria-label=".form-select-lg example">
-  <option selected value=""></option>
+  <select class="form-select form-select-lg mb-3" value="{{$medecins->special}}" name="special" aria-label=".form-select-lg example">
+  <option selected value="{{$medecins->special}}"></option>
   <option value="Médecine générale">Médecine générale</option>
   <option value="Endocrinologie - Diabétologie">Médecine interne</option>
   <option value="Cardiologie">Réanimation médicale</option>
-  <option value="Pneumologie">Carcinologie médicale</option>
-  <option value="Neurologie">Neurologie</option>
-  <option value="Neurologie">Hématologie clinique</option>
-  <option value="Neurologie">Nutrition et maladies nutritionnelles</option>
-  <option value="Neurologie">Endocrinologie</option>
-  <option value="Neurologie">Néphrologie</option>
-  <option value="Neurologie">Rhumatologie</option>
-  <option value="Neurologie">Gastro-entérologie</option>
-  <option value="Neurologie"> rééducation et réadaptation fonctionnelle</option>
-  <option value="Neurologie">Dermatologie</option>
-  <option value="Neurologie">Pédiatrie</option>
-  <option value="Neurologie">Médecine préventive et communautaire</option>
-  <option value="Neurologie">Anesthésie - réanimation</option>
-  <option value="Neurologie">Anatomie et cytologie pathologique</option>
-  <option value="Neurologie">Médecine d'urgence</option>
-  <option value="Neurologie">Chirurgie générale</option>
-  <option value="Neurologie">Chirurgie carcinologique</option>
-  <option value="Neurologie">Chirurgie thoracique</option>
-  <option value="Neurologie">Chirurgie vasculaire périphérique</option>
-  <option value="Neurologie">Chirurgie neurologique</option>
-  <option value="Neurologie">Chirurgie urologique.Chirurgie plastique</option>
-  <option value="Neurologie">Chirurgie orthopédique et traumatologique</option>
-  <option value="Neurologie">Chirurgie pédiatrique</option>
-  <option value="Neurologie">Chirurgie cardio-vasculaire</option>
-  <option value="Neurologie">Ophtalmologie</option>
-  <option value="Neurologie">Stomatologie et chirurgie maxillo-faciale</option>
-  <option value="Neurologie">Gynécologie-obstétrique</option>
+  <option value="Pneumologie">Carcinologie médicale</option>  
+  <option value="Hématologie clinique">Hématologie clinique</option>
+  <option value="Nutrition et maladies nutritionnelles">Nutrition et maladies nutritionnelles</option>
+  <option value="Endocrinologie">Endocrinologie</option>
+  <option value="Néphrologie">Néphrologie</option>
+  <option value="Rhumatologie">Rhumatologie</option>
+  <option value="Gastro-entérologie">Gastro-entérologie</option>
+  <option value="rééducation et réadaptation fonctionnelle"> rééducation et réadaptation fonctionnelle</option>
+  <option value="Dermatologie">Dermatologie</option>
+  <option value="Pédiatrie">Pédiatrie</option>
+  <option value="Médecine préventive et communautaire">Médecine préventive et communautaire</option>
+  <option value="Anesthésie - réanimation">Anesthésie - réanimation</option>
+  <option value="Anatomie et cytologie pathologique">Anatomie et cytologie pathologique</option>
+  <option value="Médecine d'urgence">Médecine d'urgence</option>
+  <option value="Chirurgie générale">Chirurgie générale</option>
+  <option value="Chirurgie carcinologique">Chirurgie carcinologique</option>
+  <option value="Chirurgie thoracique">Chirurgie thoracique</option>
+  <option value="Chirurgie vasculaire périphérique">Chirurgie vasculaire périphérique</option>
+  <option value="Chirurgie neurologique">Chirurgie neurologique</option>
+  <option value="Chirurgie urologique.Chirurgie plastique">Chirurgie urologique.Chirurgie plastique</option>
+  <option value="Chirurgie orthopédique et traumatologique">Chirurgie orthopédique et traumatologique</option>
+  <option value="Chirurgie pédiatrique">Chirurgie pédiatrique</option>
+  <option value="Chirurgie cardio-vasculaire">Chirurgie cardio-vasculaire</option>
+  <option value="Ophtalmologie">Ophtalmologie</option>
+  <option value="Stomatologie et chirurgie maxillo-faciale">Stomatologie et chirurgie maxillo-faciale</option>
+  <option value="Gynécologie-obstétrique">Gynécologie-obstétrique</option>
+
 
   
  
@@ -103,7 +103,7 @@
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">modifier</button>
-  <a class="btn btn-info " target="__blank" style="align: center;" href="{{ route('medecin.index')}}">Retour</a>
+  <a class="btn btn-primary" target="__blank" style="align: center;" href="{{ route('medecin.index')}}">Retour</a>
 </form>
 </div>
 

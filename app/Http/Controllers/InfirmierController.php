@@ -73,10 +73,10 @@ class InfirmierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $infirmiers = Infirmier::findOrFail($id);
-        return view('infirmier.edit',compact('infirmiers'));
-        
+        return view('infirmier.edit',compact('infirmiers'));}
+        return redirect()->route('infirmier.index'); 
     }
 
     /**
@@ -108,11 +108,28 @@ class InfirmierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $infirmiers = Infirmier::find($id);
         $infirmiers->delete() ;
 
         return redirect()->route('infirmier.index')
-        ->with('success','infirmier deleted successfully '); 
+        ->with('success','infirmier deleted successfully '); }
+        return redirect()->route('infirmier.index');
+    }
+    public function search()
+    {
+       $search_text=$_GET['que'];
+        $infirmiers =  Infirmier::Where('genre' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+
+                     
+
+        return view('infirmier.search',compact('infirmiers'));
+
+
+
+
+
     }
 }

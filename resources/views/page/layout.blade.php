@@ -11,9 +11,12 @@
         <style>
         body {
             color: #566787;
-            background-image:url('images/site.jpg');
+            background-image:url('images/staff1.jpg');
             font-family: 'Varela Round', sans-serif;
             font-size: 13px;
+            background-repeat: no-repeat;
+            background-size:cover;
+            
         }
         </style>
 

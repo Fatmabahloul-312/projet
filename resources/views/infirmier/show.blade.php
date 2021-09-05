@@ -1,12 +1,7 @@
-@extends('infirmier.layout') 
+@extends('medecin.layout') 
 @section('content')
 <style>
-body{
-    margin-top:20px;
-    color: #1a202c;
-    text-align: left;
-    background-color: #e2e8f0;    
-}
+
 .main-body {
     padding: 15px;
 }
@@ -57,7 +52,7 @@ body{
 
 </style>
 
-<div class="container">
+<div class="container -xl">
     <div class="main-body">
     
          
@@ -136,8 +131,8 @@ body{
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="{{ route('infirmier.edit',$infirmiers->id)}}">Modifier</a>
-                      <a class="btn btn-info " target="__blank" href="{{ route('infirmier.index')}}">Retour</a>
+                      <a class="btn btn-primary" target="__blank" href="{{ route('infirmier.edit',$infirmiers->id)}}">Modifier</a>
+                      <a class="btn btn-primary" target="__blank" href="{{ route('infirmier.index')}}">Retour</a>
                     </div>
                   </div>
                 </div>

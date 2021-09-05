@@ -13,7 +13,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-         
+         $this->middleware('is_admin');
     }
 
     public function index()
@@ -44,7 +44,7 @@ class UserController extends Controller
         'password' => Hash::make($request->password ),
     ]);
 
-    
+    return redirect()->route('users');
 
     }
 
@@ -81,23 +81,11 @@ class UserController extends Controller
     public function search(Request $request)
     {
         $q = $request->q;
-        $user =  User::Where('name' , 'LIKE' , '%' . $q .'%')
+        $users =  User::Where('name' , 'LIKE' , '%' . $q .'%')
                        ->orWhere('email' , 'LIKE' , '%' . $q .'%')->get();
 
-                     //  dd($user);
 
-        $users = User::orderBy('created_at','desc')->get();
-
-                       if ( $user->count() > 0) {
-                        return view('users.index')
-                        ->withDetails($user)->withQuery($q)->with('users',$users);
-                       }
-                       else{
-                        // $users = User::orderBy('created_at','desc')->get();
-                        return view('users.index')
-                        ->withMessage('Not found'  )->with('users',$users);
-                       }
-
+        return view('users.search',compact('users'));
 
 
 

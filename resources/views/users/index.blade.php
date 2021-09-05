@@ -27,9 +27,9 @@
 
             <div class="form-group mx-sm-3 mb-2">
               <label for="inputPassword2" class="sr-only">Password</label>
-              <input type="text" name="q" class="form-control" id="inputPassword2" placeholder="search">
+              <input type="text" name="q" class="form-control" id="inputPassword2" placeholder="chercher">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">click</button>
+            <button type="submit" class="btn btn-primary mb-2">chercher</button>
           </form>
        </div>
 
@@ -88,7 +88,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col"> Email</th>
-                    <th scope="col"> Actions</th>
+                    <th scope="col" style="width:250px;"> Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -101,6 +101,14 @@
                         <td>{{$item->name}}</td>
                         <td>{{$item->email}}</td>
                         <td>
+                        @if ($item->is_admin == 1)
+                            <a class="text-info" href="{{route('user.not.admin',['id'=> $item->id])}}"> <i class="fas  fa-2x fa-user"></i> admin </a>
+
+                            @else
+                            <a class="text-info" href="{{route('user.admin',['id'=> $item->id])}}"> <i class="fas  fa-2x fa-user"></i> not admin  </a>
+
+                            @endif
+
                           <a   class="delete" href="{{ route('user.delete',['id'=>$item->id])}}"  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                            
 

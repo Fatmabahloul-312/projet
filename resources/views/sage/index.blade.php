@@ -2,7 +2,7 @@
 @section('content')
 
      
-<div class="container-xl">
+<div class="container">
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
@@ -16,7 +16,24 @@
 					</div>
 				</div>
 			</div>
+      <div class="row">
+        <div class="col">
 
+       <div class="container -xl" style=" padding-bottom: 13px">
+        <form class="form-inline" action="{{url('sage/search')}}" method="GET" >
+          {{ csrf_field() }}
+
+            <div class="form-group mx-sm-3 mb-2">
+             
+              <input type="text" name="sa" class="form-control" id="inputPassword1" placeholder="chercher">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">chercher</button>
+          </form>
+       </div>
+
+        </div>
+      </div>
+     
 
 
 

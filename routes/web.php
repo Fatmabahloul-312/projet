@@ -27,7 +27,7 @@ Route::get('medecin/edit', 'MedecinController@index ')->name('medecin.store');
 Route::get('medecin','MedecinController@show')->name('medecin.show');
 Route::get('medecin/delete/{id}', 'MedecinController@destroy')->name('medecin.delete');
 Route::post('medecin/update', 'MedecinController@update')->name('medecin.update');
-Route::get('/search', 'MedecinController@search' )->name('medecin.search');
+Route::get('medecin/search', 'MedecinController@search' )->name('medecin.search');
 
 
 Route::get('infirmier/create','InfirmierController@index')->name('infirmier.create');
@@ -37,7 +37,7 @@ Route::get('infirmier/edit', 'InfirmierController@index ')->name('infirmier.stor
 Route::get('infirmier','InfirmierController@show')->name('infirmier.show');
 Route::get('infirmier/delete/{id}', 'InfirmierController@destroy')->name('infirmier.delete');
 Route::post('infirmier/update', 'InfirmierController@update')->name('infirmier.update');
-
+Route::get('infirmier/search', 'InfirmierController@search' )->name('infirmier.search');
 
 
 Route::get('masseur/create','MasseurController@index')->name('masseur.create');
@@ -47,7 +47,7 @@ Route::get('masseur/edit', 'MasseurController@index ')->name('masseur.store');
 Route::get('masseur','MasseurController@show')->name('masseur.show');
 Route::get('masseur/delete/{id}', 'MasseurController@destroy')->name('masseur.delete');
 Route::post('masseur/update', 'MasseurController@update')->name('masseur.update');
-
+Route::get('masseur/search','MasseurController@search' )->name('masseur.search');
 
 
 Route::get('ouvrier/create','OuvrierController@index')->name('ouvrier.create');
@@ -57,6 +57,7 @@ Route::get('ouvrier/edit', 'OuvrierController@index ')->name('ouvrier.store');
 Route::get('ouvrier','OuvrierController@show')->name('ouvrier.show');
 Route::get('ouvrier/delete/{id}', 'OuvrierController@destroy')->name('ouvrier.delete');
 Route::post('ouvrier/update', 'OuvrierController@update')->name('ouvrier.update');
+Route::get('ouvrier/search', 'OuvrierController@search' )->name('ouvrier.search');
 
 
 
@@ -67,7 +68,7 @@ Route::get('sage/edit', 'SageController@index ')->name('sage.store');
 Route::get('sage','SageController@show')->name('sage.show');
 Route::get('sage/delete/{id}', 'SageController@destroy')->name('sage.delete');
 Route::post('sage/update', 'SageController@update')->name('sage.update');
-
+Route::get('sage/search', 'SageController@search' )->name('sage.search');
 
 
 
@@ -78,7 +79,7 @@ Route::get('surveillant/edit', 'SurveillantController@index ')->name('surveillan
 Route::get('surveillant','SurveillantController@show')->name('surveillant.show');
 Route::get('surveillant/delete/{id}', 'SurveillantController@destroy')->name('surveillant.delete');
 Route::post('surveillant/update', 'SurveillantController@update')->name('surveillant.update');
-
+Route::get('surveillant/search', 'SurveillantController@search' )->name('surveillant.search');
 
 
 
@@ -89,7 +90,7 @@ Route::get('preparatrice/edit', 'PreparatriceController@index ')->name('preparat
 Route::get('preparatrice','PreparatriceController@show')->name('preparatrice.show');
 Route::get('preparatrice/delete/{id}', 'PreparatriceController@destroy')->name('preparatrice.delete');
 Route::post('preparatrice/update', 'PreparatriceController@update')->name('preparatrice.update');
-
+Route::get('preparatrice/search', 'PreparatriceController@search' )->name('preparatrice.search');
 
 
 
@@ -100,7 +101,7 @@ Route::get('psychologue/edit', 'PsychologueController@index ')->name('psychologu
 Route::get('psychologue','PsychologueController@show')->name('psychologue.show');
 Route::get('psychologue/delete/{id}', 'PsychologueController@destroy')->name('psychologue.delete');
 Route::post('psychologue/update', 'PsychologueController@update')->name('psychologue.update');
-
+Route::get('psychologue/search', 'PsychologueController@search' )->name('psychologue.search');
 
 
 
@@ -117,6 +118,7 @@ Route::resource('psychologue','PsychologueController');
 Route::resource('masseur','MasseurController');
 Route::resource('preparatrice','PreparatriceController');
 Route::resource('ouvrier','OuvrierController');
+Route::resource('users','UserController');
 
 
 
@@ -125,19 +127,16 @@ Route::resource('ouvrier','OuvrierController');
 
 
 
-
-//route for profile
-Route::get('/profile', 'ProfileController@index' )->name('profile');
-Route::put('/profile/update', 'ProfileController@update' )->name('profile.update');
 
 
 // Routes for Users
 Route::get('/users', 'UserController@index' )->name('users');
 Route::post('/search', 'UserController@search' )->name('users.search');
-Route::get('/user/create', 'UserController@create' )->name('user.create');  //->middleware('is_admin');
+Route::get('/user/create', 'UserController@create' )->name('user.create');  
 Route::post('/user/store', 'UserController@store' )->name('user.store');
 Route::get('/user/delete/{id}', 'UserController@destroy' )->name('user.delete');
-
+Route::get('/user/admin/{id}', 'UserController@admin' )->name('user.admin');
+Route::get('/user/not/admin/{id}', 'UserController@notAdmin' )->name('user.not.admin');
 
 
 
@@ -163,7 +162,7 @@ Route::get('/user/delete/{id}', 'UserController@destroy' )->name('user.delete');
 // Routes for Users
 Route::get('/users', 'UserController@index' )->name('users');
 Route::post('/search', 'UserController@search' )->name('users.search');
-Route::get('/user/create', 'UserController@create' )->name('user.create');  //->middleware('is_admin');
+Route::get('/user/create', 'UserController@create' )->name('user.create');  
 Route::post('/user/store', 'UserController@store' )->name('user.store');
 Route::get('/user/destroy/{id}', 'UserController@destroy' )->name('user.destroy');
 Route::get('/user/admin/{id}', 'UserController@admin' )->name('user.admin');

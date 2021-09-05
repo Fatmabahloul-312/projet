@@ -3,7 +3,7 @@
 
 
     
-<div class="container">
+<div class="container" style="border-style: solid;">
     <div class="card">
         <div class="card-body">
           <p class="card-text">Preparatrice : {{ $preparatrices->nom}} {{$preparatrices->prenom}}</p>
@@ -66,7 +66,7 @@
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">modifier</button>
-  <a class="btn btn-info " target="__blank" style="align: center;" href="{{ route('preparatrice.index')}}">Retour</a>
+  <a class="btn btn-primary" target="__blank" style="align: center;" href="{{ route('preparatrice.index')}}">Retour</a>
 </form>
 </div>
 

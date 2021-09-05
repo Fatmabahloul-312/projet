@@ -32,10 +32,10 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"style="margin-right:55%;">
-                            <label for="name" class="col-md-4 control-label" style="color:rgb(79, 80, 139);">Nom</label>
+                            <label for="name" class="col-md-4 control-label" style="color:rgb(79, 80, 139);margin-left:1%;font-family: 'Lato';">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" style="margin-left:55%;">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" style="margin-left:55%;width:190%;">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="margin-right:20%;">
-                            <label for="email" class="col-md-4 control-label" style="color:rgb(79, 80, 139);"> Addresse Email</label>
+                            <label for="email" class="col-md-4 control-label" style="color:rgb(79, 80, 139);font-family: 'Lato';"> Addresse Email</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -60,10 +60,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}" style="margin-right:27%;">
-                            <label for="password" class="col-md-4 control-label" style="color:rgb(79, 80, 139);">Mot De passe </label>
+                            <label for="password" class="col-md-4 control-label" style="color:rgb(79, 80, 139);font-family: 'Lato';">Mot De Passe </label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" style="margin-left:7%;">
+                                <input id="password" type="password" class="form-control" name="password" style="margin-left:7%;width:110%;">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}" style="margin-right:20%;">
-                            <label for="password-confirm" class="col-md-4 control-label"style="color:rgb(79, 80, 139);">Confirmer MDP </label>
+                            <label for="password-confirm" class="col-md-4 control-label"style="color:rgb(79, 80, 139);font-family: 'Lato';">Confirmer MDP </label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
@@ -90,7 +90,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i> S'inscrire
+                                    <i class="fa fa-btn fa-user" style="font-family: 'Lato';"></i> S'inscrire
                                 </button>
                             </div>
                         </div>

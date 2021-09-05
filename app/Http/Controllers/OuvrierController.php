@@ -76,10 +76,10 @@ class OuvrierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $ouvriers = Ouvrier::findOrFail($id);
-        return view('ouvrier.edit',compact('ouvriers'));
-        
+        return view('ouvrier.edit',compact('ouvriers'));}
+        return redirect()->route('ouvrier.index') ;
     }
 
     /**
@@ -111,11 +111,22 @@ class OuvrierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $ouvriers = Ouvrier::find($id);
         $ouvriers->delete() ;
 
         return redirect()->route('ouvrier.index')
-        ->with('success','ouvrier deleted successfully '); 
+        ->with('success','ouvrier deleted successfully '); }
+        return redirect()->route('masseur.index');
     }
+    public function search(Request $request)
+    {
+       $search_text=$_GET['query'];
+        $ouvriers =  Ouvrier::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+
+                     
+
+        return view('ouvrier.search',compact('ouvriers'));}
 }

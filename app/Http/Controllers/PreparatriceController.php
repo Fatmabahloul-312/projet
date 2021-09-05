@@ -76,10 +76,10 @@ class PreparatriceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $preparatrices = Preparatrice::findOrFail($id);
-        return view('preparatrice.edit',compact('preparatrices'));
-        
+        return view('preparatrice.edit',compact('preparatrices'));}
+        return redirect()->route('preparatrice.index');
     }
 
     /**
@@ -111,11 +111,22 @@ class PreparatriceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $preparatrices = Preparatrice::find($id);
         $preparatrices->delete() ;
 
         return redirect()->route('preparatrice.index')
-        ->with('success','preparatrice deleted successfully '); 
+        ->with('success','preparatrice deleted successfully '); }
+        return redirect()->route('preparatrice.index');
     }
+    public function search()
+    {
+       $search_text=$_GET['query'];
+        $preparatrices =  Preparatrice::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+
+                     //  dd($user);
+
+        return view('preparatrice.search',compact('preparatrices'));}
 }

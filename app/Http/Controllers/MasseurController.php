@@ -76,10 +76,10 @@ class MasseurController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $masseurs = Masseur::findOrFail($id);
-        return view('masseur.edit',compact('masseurs'));
-        
+        return view('masseur.edit',compact('masseurs'));}
+        return redirect()->route('masseur.index'); 
     }
 
     /**
@@ -111,11 +111,22 @@ class MasseurController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $masseurs = Masseur::find($id);
         $masseurs->delete() ;
 
         return redirect()->route('masseur.index')
-        ->with('success','masseur deleted successfully '); 
+        ->with('success','masseur deleted successfully '); }
+        return redirect()->route('masseur.index');
     }
+    public function search(Request $request)
+    {
+       $search_text=$_GET['query'];
+        $masseurs =  Masseur::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+
+                     //  dd($user);
+
+        return view('masseur.search',compact('masseurs'));}
 }

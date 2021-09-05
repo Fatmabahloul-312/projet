@@ -137,8 +137,8 @@ body{
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="{{ route('psychologue.edit',$psychologues->id)}}">Modifier</a>
-                      <a class="btn btn-info " target="__blank" href="{{ route('psychologue.index')}}">Retour</a>
+                      <a class="btn btn-primary" target="__blank" href="{{ route('psychologue.edit',$psychologues->id)}}">Modifier</a>
+                      <a class="btn btn-primary" target="__blank" href="{{ route('psychologue.index')}}">Retour</a>
                     </div>
                   </div>
                 </div>

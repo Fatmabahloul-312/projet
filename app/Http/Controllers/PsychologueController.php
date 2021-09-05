@@ -76,10 +76,10 @@ class PsychologueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $infirmiers = Psychologue::findOrFail($id);
-        return view('psychologue.edit',compact('psychologues'));
-        
+        return view('psychologue.edit',compact('psychologues'));}
+        return redirect()->route('psychologue.index');
     }
 
     /**
@@ -111,11 +111,22 @@ class PsychologueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $psychologues = Psychologue::find($id);
         $psychologues->delete() ;
 
         return redirect()->route('psychologue.index')
-        ->with('success','psychologue deleted successfully '); 
+        ->with('success','psychologue deleted successfully ');}
+        return redirect()->route('psychologue.index');
     }
+    public function search()
+    {
+       $search_text=$_GET['query'];
+        $psychologues =  Psychologue::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+
+                     
+
+        return view('psychologue.search',compact('psychologues'));}
 }

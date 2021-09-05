@@ -3,9 +3,9 @@
 <style>
 body{
     margin-top:20px;
-    color: #1a202c;
+    
     text-align: left;
-    background-color: #e2e8f0;    
+    background-image: url({{ URL::asset('images/staff1.jpg')}});    
 }
 .main-body {
     padding: 15px;
@@ -137,8 +137,8 @@ body{
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="{{ route('sage.edit',$sages->id)}}">Modifier</a>
-                      <a class="btn btn-info " target="__blank" href="{{ route('sage.index')}}">Retour</a>
+                      <a class="btn btn-primary" target="__blank" href="{{ route('sage.edit',$sages->id)}}">Modifier</a>
+                      <a class="btn btn-primary" target="__blank" href="{{ route('sage.index')}}">Retour</a>
                     </div>
                   </div>
                 </div>

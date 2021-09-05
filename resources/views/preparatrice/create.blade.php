@@ -1,7 +1,14 @@
-@extends('preparatrice.layout') 
+@extends('medecin.layout') 
 @section('content')
-     
-<div class="container">
+<body style="
+        
+        background-image: url({{ URL::asset('images/staff1.jpg')}});
+            font-family: 'Varela Round', sans-serif;
+            font-size: 13px;
+            background-repeat: no-repeat;
+            background-size:cover;
+        ">
+<div class="container" style="border-style: solid;">
     
 <form action="{{route('preparatrice.store')}}" method="POST" enctype="multipart/form-data">
  
@@ -58,10 +65,10 @@
   </div>
   <div class="col-sm-12">
   <button type="submit" class="btn btn-primary">enregistrer</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-  <a class="btn btn-info " target="__blank" href="{{ route('preparatrice.index')}}">Retour</a>
+  <a class="btn btn-primary" target="__blank" href="{{ route('preparatrice.index')}}">Retour</a>
   </div>
 </form>
 </div>
-
+</body>
 
 @endsection

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Des ouvriers</title>
+        <title>StaffMedical</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -10,9 +10,11 @@
         <style>
         body {
             color: #566787;
-            background-image:url('images/site.jpg');
+            background-image: url({{ URL::asset('images/staff1.jpg')}});
             font-family: 'Varela Round', sans-serif;
             font-size: 13px;
+            background-repeat: no-repeat;
+            background-size:cover;
         }
         .table-responsive {
             margin: 30px 0;
@@ -94,7 +96,7 @@
     <body>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
         
-           <table  class="table"style="width:60%; ">
+           <table  class="table1" style="width:100%; background-color: white; ">
                <th><a style="font-size: 25px;" href="{{ url('/home')}}"><p style="color:rgb(64, 65, 141);">Acceuil</p></a></th>
                <th><a style="font-size: 25px;" ><p ></p></a></th>
                <th><a style="font-size: 25px;" ><p ></p></a></th>

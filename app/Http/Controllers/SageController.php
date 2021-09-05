@@ -76,10 +76,10 @@ class SageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {if (auth()->user()->is_admin == 1){
         $sages = Sage::findOrFail($id);
-        return view('sage.edit',compact('sages'));
-        
+        return view('sage.edit',compact('sages'));}
+        return redirect()->route('sage.index');
     }
 
     /**
@@ -111,11 +111,22 @@ class SageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id )
-    {
+    {if (auth()->user()->is_admin == 1){
         $sages = Sage::find($id);
         $sages->delete() ;
 
         return redirect()->route('sage.index')
-        ->with('success','sage deleted successfully '); 
+        ->with('success','sage deleted successfully '); }
+        return redirect()->route('sage.index');
     }
+    public function search()
+    {
+       $search_text=$_GET['sa'];
+        $sages =  Sage::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+
+                     
+
+        return view('sage.search',compact('sages'));}
 }
