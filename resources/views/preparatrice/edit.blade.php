@@ -3,14 +3,14 @@
 
 
     
-<div class="container" style="border-style: solid;">
+<div class="container" style="border-style: solid; background-color:white; margin-top:5%;">
     <div class="card">
         <div class="card-body">
-          <p class="card-text">Preparatrice : {{ $preparatrices->nom}} {{$preparatrices->prenom}}</p>
+          <p class="card-text">Preparatrice en Pharmacie : {{ $preparatrices->nom}} {{$preparatrices->prenom}}</p>
         </div>
       </div>
     
-<form action="{{route('infirmier.update',$infirmiers->id)}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('preparatrice.update',$preparatrices->id)}}" method="POST" enctype="multipart/form-data">
  
     {{ csrf_field() }}
     {{ method_field('PUT') }}

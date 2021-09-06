@@ -191,7 +191,7 @@ input[type=submit]:hover {
         <div class="col" style="height:40%">
             <div class="card border-success mx-sm-1 p-3" >
                 <div class="card border-info shadow text-info p-3 my-card"><span class="fa fa-heart" style="color:rgb(64, 65, 141);" aria-hidden="true"></span></div>
-                <div class="text-success text-center mt-3"><h4><a  href="{{ route('paramedical.index') }}"  style="color:rgb(64, 65, 141);" >Personnel paramédical</a></h4></div>
+                <div class="text-success text-center mt-3"><h4><a  href="{{ route('paramedical.index') }}"  style="color:rgb(64, 65, 141);" >Personnel Paramédical</a></h4></div>
                 <div class="text-success text-center mt-2"><h1></h1></div>
             </div>
         </div>

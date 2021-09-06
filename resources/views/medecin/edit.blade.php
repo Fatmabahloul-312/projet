@@ -3,7 +3,7 @@
 
 
       
-<div class="container">
+<div class="container" style="border-style: solid; background-color:white; margin-top:5%;">
     <div class="card">
         <div class="card-body">
           <p class="card-text"> Medecin : {{ $medecins->nom}} {{$medecins->prenom}}</p>

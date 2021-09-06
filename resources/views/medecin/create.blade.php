@@ -1,9 +1,9 @@
 @extends('medecin.layout') 
 @section('content')
  <body>
-<div class="container" style="border-style: solid;">
+<div class="container" style="border-style: solid; background-color:white; margin-top:5%;">
     
-<form action="{{route('medecin.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('medecin.store')}}" method="POST" enctype="multipart/form-data" class="row g-3">
  
     {{ csrf_field() }}
  

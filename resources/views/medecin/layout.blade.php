@@ -84,6 +84,10 @@
             margin: 0 5px;
             cursor: pointer;
         }	
+        .row g-3{
+            background-color:white;
+
+        }
 
     </style>  
 

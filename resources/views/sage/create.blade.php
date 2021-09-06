@@ -9,7 +9,7 @@
             background-size:cover;
         ">
      
-<div class="container -xl" style="border-style: solid;">
+<div class="container -xl" style="border-style: solid; background-color:white; margin-top:5%;">
     
 <form action="{{route('sage.store')}}" method="POST" enctype="multipart/form-data">
  

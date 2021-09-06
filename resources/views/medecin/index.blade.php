@@ -25,9 +25,9 @@
 
             <div class="form-group mx-sm-3 mb-2">
              
-              <input type="text" name="query" class="form-control" id="inputPassword2" placeholder="rechercher">
+              <input type="text" name="query" class="form-control" id="inputPassword2" placeholder="Recherche">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">chercher</button>
+            <button type="submit" class="btn btn-primary mb-2">Recherche</button>
           </form>
        </div>
 
