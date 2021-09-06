@@ -127,10 +127,10 @@ class MedecinController extends Controller
     {
        $search_text=$_GET['query'];
         $medecins =  Medecin::Where('special' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('email' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+                       ->orWhere('nom' , 'LIKE' , '%' .  $search_text .'%')
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')->get();
 
-                
+                        
 
         return view('medecin.search',compact('medecins'));
 

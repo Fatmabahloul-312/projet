@@ -124,7 +124,7 @@ class OuvrierController extends Controller
        $search_text=$_GET['query'];
         $ouvriers =  Ouvrier::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
                        ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+                       ->get();
 
                      
 

@@ -121,7 +121,7 @@ class InfirmierController extends Controller
        $search_text=$_GET['que'];
         $infirmiers =  Infirmier::Where('genre' , 'LIKE' , '%' .  $search_text .'%')
                        ->orWhere('nom' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+                       ->get();
 
                      
 

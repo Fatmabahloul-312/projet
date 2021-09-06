@@ -123,8 +123,7 @@ class PreparatriceController extends Controller
     {
        $search_text=$_GET['query'];
         $preparatrices =  Preparatrice::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+                       ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')->get();
 
                      //  dd($user);
 

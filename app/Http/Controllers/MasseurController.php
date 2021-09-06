@@ -124,7 +124,7 @@ class MasseurController extends Controller
        $search_text=$_GET['query'];
         $masseurs =  Masseur::Where('nom' , 'LIKE' , '%' .  $search_text .'%')
                        ->orWhere('prenom' , 'LIKE' , '%' .  $search_text .'%')
-                       ->orWhere('detail' , 'LIKE' , '%' .  $search_text .'%')->get();
+                      ->get();
 
                      //  dd($user);
 
