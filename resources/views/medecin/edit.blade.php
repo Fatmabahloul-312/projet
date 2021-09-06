@@ -83,7 +83,7 @@
   <div  class="mb-3">
   <label for="formGroupExampleInput" class="form-label">Disponibilité</label>
   <br>
-  <div class="form-check form-check-inline">
+  <div class="form-check form-check-inline" >
     <input class="form-check-input" type="checkbox" name="detail" id="inlineCheckbox1" value="disponible">
     <label class="form-check-label" for="inlineCheckbox1">disponible</label>
   </div>
