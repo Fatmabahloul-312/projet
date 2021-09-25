@@ -30,7 +30,7 @@
             </div>
             <button type="submit" class="btn btn-primary mb-2">Recherche</button>
           </form>
-       </div>
+       </div> 
 
         </div>
       </div>

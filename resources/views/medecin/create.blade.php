@@ -32,9 +32,9 @@
   <select class="form-select form-select-lg mb-3" name="special" aria-label=".form-select-lg example">
   <option selected value=""></option>
   <option value="Médecine générale">Médecine générale</option>
-  <option value="Endocrinologie - Diabétologie">Médecine interne</option>
-  <option value="Cardiologie">Réanimation médicale</option>
-  <option value="Pneumologie">Carcinologie médicale</option>  
+  <option value="Médecine interne">Médecine interne</option>
+  <option value="Réanimation médicale">Réanimation médicale</option>
+  <option value="Carcinologie médicale">Carcinologie médicale</option>  
   <option value="Hématologie clinique">Hématologie clinique</option>
   <option value="Nutrition et maladies nutritionnelles">Nutrition et maladies nutritionnelles</option>
   <option value="Endocrinologie">Endocrinologie</option>

@@ -12,6 +12,7 @@
 					</div>
 					<div class="col-sm-6">
 						<a href="{{ route('medecin.create')}}" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter Un Nouveau Médecin</span></a>
+            
 											
 					</div>
 				</div>
@@ -81,6 +82,7 @@
 
       <a href="{{ route('medecin.show',['id'=>$item->id])}}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
       <a href="{{ route('medecin.edit',['id'=>$item->id])}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+     
       <a   class="delete" href="{{ route('medecin.delete',['id'=>$item->id])}}"  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 
     </td>

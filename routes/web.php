@@ -29,6 +29,11 @@ Route::get('medecin/delete/{id}', 'MedecinController@destroy')->name('medecin.de
 Route::post('medecin/update', 'MedecinController@update')->name('medecin.update');
 Route::get('medecin/search', 'MedecinController@search' )->name('medecin.search');
 
+Route::get('medecin/remplace', function () {
+    return view('medecin.remplace');
+})->name('medecin.remplace');
+
+
 
 Route::get('infirmier/create','InfirmierController@index')->name('infirmier.create');
 Route::post('infirmier/create', 'InfirmierController@store')->name('infirmier.store');
